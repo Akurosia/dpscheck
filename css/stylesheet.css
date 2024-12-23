@@ -1,0 +1,455 @@
+html {
+	background: rgba(0, 0, 0, .5) url(../assets/images/bg_full.jpg);
+	background-blend-mode: darken;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+	display: flex;
+  align-items: center;
+}
+
+p {
+	color: #e2e2e2;
+}
+
+p.thanks {
+	font-size: .8em; color: #ad9462; text-align: center
+}
+
+.thanks a {
+	color: #e2e2e2;
+	text-decoration: none;
+}
+
+h1 {
+	color: #e2e2e2;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: -10px;
+	padding: 10px;
+	padding-bottom: 0px;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#959595+0,272527+100 */
+	background: rgb(149,149,149); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(100,100,100,1) 0%, rgba(39,37,39,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(100,100,100,1) 0%,rgba(39,37,39,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(100,100,100,1) 0%,rgba(39,37,39,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#272527',GradientType=0 ); /* IE6-9 */
+
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+
+}
+
+h3 {
+	display: inline-block;
+	margin-left: 50px;
+}
+
+hr {
+	border: 1px inset #4c464c;
+	margin: 10px 0;
+}
+
+div.filler {
+	/*display: block;*/
+	/*position: absolute;*/
+	/*top: 0;*/
+	/*left: 0;*/
+	/*right: 0;*/
+	
+}
+
+div.container {
+	background-color: #272527;
+	border: 4px ridge #ad9462;
+	color: #ad9462;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	padding: 10px;
+	width: 600px;
+
+	margin: auto;
+	margin-top: 20px;
+}
+
+div.results {
+	text-align: center;
+}
+
+button {
+	color: #e2e2e2;
+
+	/*background-color: #454a45;*/
+	border-style: solid;
+	border-width: 1px;
+	border-color: #888 #333;
+	height: 25px;
+	width: 100px;
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#959595+0,4f4f4f+42,4f4f4f+47,262626+65,383838+89,1b1b1b+100 */
+	background: rgb(149,149,149); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(149,149,149,1) 0%, rgba(79,79,79,1) 42%, rgba(79,79,79,1) 47%, rgba(38,38,38,1) 65%, rgba(56,56,56,1) 89%, rgba(27,27,27,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(149,149,149,1) 0%,rgba(79,79,79,1) 42%,rgba(79,79,79,1) 47%,rgba(38,38,38,1) 65%,rgba(56,56,56,1) 89%,rgba(27,27,27,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(149,149,149,1) 0%,rgba(79,79,79,1) 42%,rgba(79,79,79,1) 47%,rgba(38,38,38,1) 65%,rgba(56,56,56,1) 89%,rgba(27,27,27,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
+
+}
+
+/* remove standard-styles */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border:none;
+  border-radius: 0;
+  font-size: 1em;
+  width: 100%
+}
+
+/* styling */
+select {
+	vertical-align: middle;
+	width: 230px;
+	height: 25px;
+	font-size: .8em;
+
+	/*background-color: #454a45;*/
+	border-style: solid;
+	border-width: 1px;
+	border-color: #888 #333;
+
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	padding: 4px 0px 4px 20px;
+
+	box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2);
+
+	background-color: #454a45;
+
+	color: #e2e2e2;
+	background-image:url(../assets/icons/arrow.png);
+	background-position: left;
+	background-position: 5px;
+	background-size: 12px;
+	background-repeat: no-repeat;
+}
+
+
+label img {
+	width: 100%;
+	height: auto;
+
+}
+
+input[type=radio   ]:not(old){
+  width   : 25px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+}
+
+input[type=radio   ]:not(old) + label{
+	border: 1px solid;
+	border-color: gray black black gray;
+	width: 35px;
+	display      : inline-block;
+	margin-left  : -25px;
+	padding: 2px;
+  line-height: 0;
+  /*background   : url('./icons/drk_ico.jpg') no-repeat 0 0;
+  line-height  : 31px;
+*/
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+input[type=radio]:not(old):checked + label{
+   border: 1px solid;
+	border-color: #33DD74;
+   background-position : 0 2px;
+   background-color: #444444;
+
+}
+
+input[type=radio]:not(old):hover + label{
+	border: 1px solid #ad9462;
+}
+.singleDPS, .groupDPS{
+	margin-top:auto;
+    margin-bottom:auto;
+    text-align:center;
+}
+
+.jobselect {
+	padding-left: 5px;
+	width: 60%;
+	display: inline-block;
+}
+
+.dummytext {
+	padding-left: 10px;
+	vertical-align: middle;
+	width: 45%;
+	display: inline-block;
+}
+
+.jobselect div {
+  display: inline-block;
+  margin: 0;
+  width: 15%;
+}
+
+.hptimeinput div {
+	display: inline-block;
+	width: 25%;
+	padding: 10px;
+}
+
+.hptimeinput input {
+	width: 80px;
+	height: 25px;
+	font-size: .8em;
+	text-align: right;
+
+	/*background-color: #454a45;*/
+	border-style: solid;
+	border-width: 1px;
+	border-color: #888 #333;
+
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	padding: 4px 20px 4px 20px;
+
+	box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2);
+
+	background-color: #454a45;
+
+	color: #e2e2e2;
+
+}
+
+img#hpscreen, img#timescreen {
+	height: 70px;
+	display: inline-block;
+}
+
+img#settingsscreen {
+	width: 100%;
+}
+
+div.hidelarge {
+	display: none;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+
+@media (max-width: 1024px) {
+	body {
+
+
+    	color: #e2d2af;
+		background: url(images/pw_maze_black.png);
+
+	    background-attachment: fixed;
+	}
+
+	h1 {
+		font-size: 2em;
+		font-weight: bold;
+		margin: -10px;
+		padding: 10px;
+	}
+	p {
+		font-size: 1.6em;
+	}
+
+	h2 {
+		text-align: center;
+	}
+
+	div.dummytext {
+		padding: 40px;
+		font-size: 1.4em;
+		height: 70px;
+		width: 90%;
+	}
+
+	div.results {
+		padding: 40px;
+		font-size: 1.4em;
+		height: 100px;
+		width: 90%;
+		text-align: center;
+	}
+
+	div.results button {
+		width: 250px;
+		height: 65px;
+		font-size: 1.6em;
+		margin: auto;
+
+
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+	}
+
+
+	div.hidesmall {
+		display: none;
+	}
+	div.hidelarge {
+		display: block;
+	}
+
+	div.container {
+		width: 90%;
+
+		padding: 20px;
+	}
+
+	div.hptimeinput {
+		font-size: 1.4em;
+	}
+
+	div.hptimeinput div{
+		width: 45%;
+	}
+
+	div.hptimeinput input {
+		font-size: 1.4em;
+		width: 200px;
+		height: 50px;
+
+
+	padding: 4px 20px 4px 20px;
+
+
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+	}
+
+	div.infodiv {
+		font-size: 1.4em;
+	}
+
+
+	img#hpscreen, img#timescreen {
+		height: 80px;
+		display: inline-block;
+		margin: 20px;
+	}
+
+	img#settingsscreen {
+		margin: 5%;
+		width: 90%;
+	}
+
+	.jobselect {
+		width: 90%;
+	}
+
+	.jobselect div {
+		width: 18%;
+	}
+
+	input[type=radio   ]:not(old){
+	  width   : 60px;
+	  margin  : 0;
+	  padding : 0;
+	  opacity : 0;
+	}
+
+	input[type=radio   ]:not(old) + label{
+		border: 5px solid;
+		border-color: gray black black gray;
+		max-width: 65px;
+		width: 80%;
+		display      : inline-block;
+		margin-left  : 20%;
+		padding: 2px;
+
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+	}
+
+
+	input[type=radio]:not(old):checked + label{
+	   border: 5px solid;
+	border-color: #33DD74;
+	   background-position : 0 2px;
+	   background-color: #444444;
+
+	}
+
+	input[type=radio]:not(old):hover + label{
+		border: 5px solid #ad9462;
+	}
+
+	select {
+
+	min-width: 300px;
+	width: 80%;
+	margin: auto;
+	height: 50px;
+	font-size: 1.4em;
+	display: block;
+
+	/*background-color: #454a45;*/
+	border-style: solid;
+	border-width: 2px;
+	border-color: #888 #333;
+
+
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+
+	padding: 8px 0px 8px 35px;
+
+	background-color: #454a45;
+
+	color: #e2e2e2;
+	background-image:url(icons/arrow.png);
+	background-position: left;
+	background-position: 10px;
+	background-size: 25px;
+	background-repeat: no-repeat;
+	}
+
+}

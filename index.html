@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Final Fantasy XIV Stone Sky Sea Calculator</title>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'/>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="css/stylesheet.css"/>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/calculateDPS.js"></script>
+	</head>
+	<body>
+		<div class="filler">
+			<div class="container">
+				<h1>Stone, Sky, Sea DPS Calculator</h1>
+				<hr/>
+				<button type="button" style="width: 49%" onclick="showSingle()">Single DPS</button>
+				<button type="button" style="width: 49%" onclick="showInfo()">Information</button>
+				<hr/>
+				<div class="singleDPS" style="display:;">
+					<p>Wähle deine Klasse aus:</p>
+					<div class="jobselect">
+						<div class="tank">
+							<input id="job1" value="Paladin" type="radio" name="job"/>
+							<label for="job1" id="pld">
+								<img src="assets/newicons/pld_ico.png"/>
+							</label>
+							<br/>
+							<input id="job2" value="Warrior" type="radio" name="job"/>
+							<label for="job2" id="war">
+								<img src="assets/newicons/war_ico.png"/>
+							</label>
+							<br/>
+							<input id="job3" value="DarkKnight" type="radio" name="job"/>
+							<label for="job3" id="drk">
+								<img src="assets/newicons/drk_ico.png"/>
+							</label>
+							<br/>
+							<input id="job17" value="Gunbreaker" type="radio" name="job"/>
+							<label for="job17" id="gnb">
+								<img src="assets/newicons/gnb_ico.png"/>
+							</label>
+							<br/>
+						</div>
+						<div class="melee">
+							<input id="job4" value="Dragoon" type="radio" name="job"/>
+							<label for="job4" id="drg">
+								<img src="assets/newicons/drg_ico.png"/>
+							</label>
+							<br/>
+							<input id="job5" value="Monk" type="radio" name="job"/>
+							<label for="job5" id="mnk">
+								<img src="assets/newicons/mnk_ico.png"/>
+							</label>
+							<br/>
+							<input id="job6" value="Ninja" type="radio" name="job"/>
+							<label for="job6" id="nin">
+								<img src="assets/newicons/nin_ico.png"/>
+							</label>
+							<br/>
+							<input id="job14" value="Samurai" type="radio" name="job"/>
+							<label for="job14" id="sam">
+								<img src="assets/newicons/sam_ico.png"/>
+							</label>
+							<br/>
+							<input id="job19" value="Reaper" type="radio" name="job"/>
+							<label for="job19" id="rpr">
+								<img src="assets/newicons/rpr_ico.png"/>
+							</label>
+							<input id="job20" value="Viper" type="radio" name="job"/>
+							<label for="job20" id="vpr">
+								<img src="assets/newicons/vpr_ico.png"/>
+							</label>
+							<br/>
+						</div>
+						<div class="range">
+							<input id="job9" value="Bard" type="radio" name="job"/>
+							<label for="job9" id="brd">
+								<img src="assets/newicons/brd_ico.png"/>
+							</label>
+							<br/>
+							<input id="job10" value="Machinist" type="radio" name="job"/>
+							<label for="job10" id="mch">
+								<img src="assets/newicons/mch_ico.png"/>
+							</label>
+							<br/>
+							<input id="job18" value="Dancer" type="radio" name="job"/>
+							<label for="job18" id="dnc">
+								<img src="assets/newicons/dnc_ico.png"/>
+							</label>
+						</div>
+						<div class="mage">
+							<input id="job7" value="Blackmage" type="radio" name="job"/>
+							<label for="job7" id="blm">
+								<img src="assets/newicons/blm_ico.png"/>
+							</label>
+							<br/>
+							<input id="job8" value="Summoner" type="radio" name="job"/>
+							<label for="job8" id="smn">
+								<img src="assets/newicons/smn_ico.png"/>
+							</label>
+							<br/>
+							<input id="job15" value="Redmage" type="radio" name="job"/>
+							<label for="job15" id="rdm">
+								<img src="assets/newicons/rdm_ico.png"/>
+							</label>
+							<br/>
+							<input id="job16" value="Bluemage" type="radio" name="job"/>
+							<label for="job16" id="blu">
+								<img src="assets/newicons/blu_ico.png"/>
+							</label>
+							<input id="job21" value="Pictomancer" type="radio" name="job"/>
+							<label for="job21" id="pct">
+								<img src="assets/newicons/pct_ico.png"/>
+							</label>
+						</div>
+						<div class="heal">
+							<input id="job11" value="Whitemage" type="radio" name="job"/>
+							<label for="job11" id="whm">
+								<img src="assets/newicons/whm_ico.png"/>
+							</label>
+							<br/>
+							<input id="job12" value="Scholar" type="radio" name="job"/>
+							<label for="job12" id="sch">
+								<img src="assets/newicons/sch_ico.png"/>
+							</label>
+							<br/>
+							<input id="job13" value="Astrologian" type="radio" name="job"/>
+							<label for="job13" id="ast">
+								<img src="assets/newicons/ast_ico.png"/>
+							</label>
+							<br/>
+							<input id="job20" value="Sage" type="radio" name="job"/>
+							<label for="job20" id="sge">
+								<img src="assets/newicons/sge_ico.png"/>
+							</label>
+							<br/>
+						</div>
+					</div>
+					<div class="fightselect">
+						<p>Wähle einen Kampf:</p>
+						<select id="fight" onchange="calcHP()">
+							<optgroup label="Trial (DT)">
+								<option value="Ewige Königin">Ewige Königin</option>
+								<option value="Valigarmanda EX">Valigarmanda EX</option>
+								<option value="Zoraal Ja EX">Zoraal Ja EX</option>
+							</optgroup>
+							<optgroup label="Arkadion - Halbschwergewicht">
+								<option selected value="M4S">M4S</option>
+								<option value="M3S">M3S</option>
+								<option value="M2S">M2S</option>
+								<option value="M1S">M1S</option>
+								<option value="Arkadion - Halbschwergewicht">Arkadion - Halbschwergewicht Normal</option>
+							</optgroup>
+							<optgroup label="Trial (EW)">
+								<option value="Zeromus EX">Zeromus EX</option>
+								<option value="Golbez EX">Golbez EX</option>
+								<option value="Rubicante EX">Rubicante EX</option>
+								<option value="Barbarizia EX">Barbarizia EX</option>
+								<option value="Endsängerin EX">Endsängerin EX</option>
+								<option value="Endsängerin">Endsängerin</option>
+								<option value="Hydaelyn EX">Hydaelyn EX</option>
+								<option value="Zodiark EX">Zodiark EX</option>
+							</optgroup>
+							<optgroup label="Anabaseios">
+								<option value="P12S">P12S</option>
+								<option value="P11S">P11S</option>
+								<option value="P10S">P10S</option>
+								<option value="P9S">P9S</option>
+								<option value="Anabaseios">Anabaseios Normal</option>
+							</optgroup>
+							<optgroup label="Abyssos">
+								<option value="P8S">P8S</option>
+								<option value="P7S">P7S</option>
+								<option value="P6S">P6S</option>
+								<option value="P5S">P5S</option>
+								<option value="Abyssos">Abyssos Normal</option>
+							</optgroup>
+							<optgroup label="Asphodelos">
+								<option value="P4S">P4S</option>
+								<option value="P3S">P3S</option>
+								<option value="P2S">P2S</option>
+								<option value="P1S">P1S</option>
+								<option value="Asphodelos">Asphodelos Normal</option>
+							</optgroup>
+							<optgroup label="Trial (ShB)">
+								<option value="Diamant EX">Diamant EX</option>
+								<option value="Smaragd EX">Smaragd EX</option>
+								<option value="WoL EX">Krieger des Lichts EX</option>
+								<option value="Ruby EX">Ruby EX</option>
+								<option value="Hades EX">Hades EX</option>
+								<option value="Hades">Hades Normal</option>
+								<option value="Innozenz EX">Innozenz EX</option>
+								<option value="Titania EX">Titania EX</option>
+							</optgroup>
+							<optgroup label="EdenVerheißung">
+								<option value="E12S">E12S</option>
+								<option value="E11S">E11S</option>
+								<option value="E10S">E10S</option>
+								<option value="E9S">E9S</option>
+								<option value="EdenVerheißung">Eden Verheißung Normal</option>
+							</optgroup>
+							<optgroup label="EdenResonanz">
+								<option value="E8S">E8S</option>
+								<option value="E7S">E7S</option>
+								<option value="E6S">E6S</option>
+								<option value="E5S">E5S</option>
+								<option value="EdenResonanz">Eden Resonanz Normal</option>
+							</optgroup>
+							<optgroup label="EdenErwachen">
+								<option value="E4S">E4S</option>
+								<option value="E3S">E3S</option>
+								<option value="E2S">E2S</option>
+								<option value="E1S">E1S</option>
+								<option value="EdenErwachen">Eden Erwachen Normal</option>
+							</optgroup>
+							<optgroup label="Trial (SB)">
+								<option value="Seiryu EX">Seiryu EX</option>
+								<option value="Suzaku EX">Suzaku EX</option>
+								<option value="Tsukyomi EX">Tsukyomi EX</option>
+								<option value="Byakko EX">Byakko EX</option>
+								<option value="Shinryu EX">Shinryu EX</option>
+								<option value="Shinryu">Shinryu</option>
+								<option value="Lakshmi EX">Lakshmi EX</option>
+								<option value="Susano EX">Susano EX</option>
+							</optgroup>
+							<optgroup label="Alphascape">
+								<option value="O12S">Alphascape V4.0 (Savage)</option>
+								<option value="O11S">Alphascape V3.0 (Savage)</option>
+								<option value="O10S">Alphascape V2.0 (Savage)</option>
+								<option value="O9S">Alphascape V1.0 (Savage)</option>
+								<option value="Alpha">Alpha Normal</option>
+							</optgroup>
+							<optgroup label="Sigmascape">
+								<option value="O8S">Sigmascape V4.0 (Savage)</option>
+								<option value="O7S">Sigmascape V3.0 (Savage)</option>
+								<option value="O6S">Sigmascape V2.0 (Savage)</option>
+								<option value="O5S">Sigmascape V1.0 (Savage)</option>
+								<option value="Sigma">Sigma Normal</option>
+							</optgroup>
+							<optgroup label="Deltascape">
+								<option value="O4S">Deltascape V4.0 (Savage)</option>
+								<option value="O3S">Deltascape V3.0 (Savage)</option>
+								<option value="O2S">Deltascape V2.0 (Savage)</option>
+								<option value="O1S">Deltascape V1.0 (Savage)</option>
+								<option value="Delta">Delta Normal</option>
+							</optgroup>
+							<optgroup label="Level 70">
+								<option value="Omega">Omega</option>
+								<option value="Sigmascape">Sigmascape</option>
+								<option value="Shinryu">The Royal Menagerie</option>
+							</optgroup>
+							<optgroup label="Trial (HW)">
+								<option value="Zurvan EX">Zurvan EX</option>
+								<option value="Sophia EX">Sophia EX</option>
+								<option value="Sephirot EX">Sephirot EX</option>
+								<option value="Nidhogg EX">Nidhogg EX</option>
+								<option value="Thordan EX">Thordan EX</option>
+								<option value="Bismark EX">Bismark EX</option>
+							</optgroup>
+							<optgroup label="Creator">
+								<option value="A12S">A12S</option>
+								<option value="A11S">A11S</option>
+								<option value="A10S">A10S</option>
+								<option value="A9S" >A9S</option>
+								<option value="Creator">Creator</option>
+							</optgroup>
+							<optgroup label="Midas">
+								<option value="A8S">A8S</option>
+								<option value="A7S">A7S</option>
+								<option value="A6S">A6S</option>
+								<option value="A5S">A5S</option>
+								<option value="Midas">Midas</option>
+							</optgroup>
+							<optgroup label="Gordias">
+								<option value="A4S">A4S</option>
+								<option value="A3S">A3S</option>
+								<option value="A2S">A2S</option>
+								<option value="A1S">A1S</option>
+								<option value="Gordias">Gordias</option>
+							</optgroup>
+							<option value="Basic">Basic</option>
+						</select>
+					</div>
+					<br/>
+					<div class="dummytext hidesmall">Die Trainingspuppe hat 0 LP</div>
+					<hr/>
+					<div class="hptimeinput">
+						Kämpfe gegen die Trainingspuppe und merke dir entweder die übrigen HP (in Prozent) oder die übrig gebliebene Zeit (in Sekunden). Gebe den Wert hier ein.
+						<br/>
+						<div>
+							<p>Übrige LP</p>
+							<input type="number" value="0" min="0" max="100" id="remhp" onchange="clearRemTime()" />%
+						</div>
+						<div>
+							<p>Übrige Zeit</p>
+							<input type="number" value="0" min="0" max="180" id="remtime" onchange="clearRemHP()" />s
+						</div>
+						<br/>
+						<br/>
+						<button type="button" onclick="calcDPS()">Berechne</button>
+					</div>
+					<hr/>
+					<div class="results">
+						<h2 id="dpsValue">Du hast 0 DPS erreicht!</h2>
+					</div>
+					<hr/>
+				</div>
+				<div class="infodiv" style="display:none">
+					<p>Wenn du Probleme hast:</p>
+					Um diesen Rechner benutzen zu können, musst du die übrigen HP und/oder die übrige Zeit des Trainings wissen.
+					<br/>
+					Beispiel:
+					<br/>
+					<img src="assets/images/remainingHP.jpg" id="hpscreen"/>
+					<img src="assets/images/remainingTime.jpg" id="timescreen"/>
+					<br/>
+					Um die Prozente der HP zu sehen, gehe auf "Character Configuration" -> "UI Settings" und wähle "Display target's remaining HP percentage" an. (Vergiss das speichern nicht!)
+					<br/>
+					<img src="assets/images/settings.jpg" id="settingsscreen"/>
+					<hr/>
+				</div>
+				<div class="thanks">
+					<p class="thanks">Danke an
+						<a href="https://ffxiv.azizarar.com" target="blank">ffxiv.azizarar.com</a> für das Bereitstellen und Sammeln der Daten (diese wurden per Script aus der Github repo umformatiert). Ebenfalls Danke an den originallen Ersteller der Seite <a href="http://ffxiv.2digitalgames.de/" target="blank">http://ffxiv.2digitalgames.de/</a> (leider existiert diese nicht mehr).
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
