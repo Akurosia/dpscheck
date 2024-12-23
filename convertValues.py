@@ -148,7 +148,9 @@ translationsBoss = {
 
     "The Interphos": "Ewige Königin",
     "Worqor Lar Dor (Extreme) ": "Valigarmanda EX",
-    "Everkeep (Extreme) ": "Zoraal Ja EX"
+    "Everkeep (Extreme) ": "Zoraal Ja EX",
+
+    "The Interphos (Extreme)": "Ewige Königin EX"
 }
 
 final = {}
@@ -167,4 +169,4 @@ for value in data["boss"]:
         final[bigJob][translationsBoss[value['bossName']]] = job['bossHp']
 
 writeJsonFile("jobs_dps.json", final)
-print_pretty_json(final)
+#print_pretty_json(final)
