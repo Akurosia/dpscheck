@@ -205,7 +205,7 @@ input[type=radio]:not(old):hover + label{
 .jobselect {
 	padding-left: 5px;
 	width: 60%;
-	display: inline-block;
+	display: inline;
 }
 
 .dummytext {
